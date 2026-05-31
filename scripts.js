@@ -17,7 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
             EUR: './assets/euro-background.jpg'
         };
 
-        document.body.style.backgroundImage = `url('${backgroundMap[currencyTo]}')`;
+        // Carrega a imagem de background de forma assíncrona para não bloquear a renderização
+        const url = backgroundMap[currencyTo];
+        if (!url) return;
+
+        const img = new Image();
+        img.src = url;
+        img.onload = () => {
+            document.body.style.backgroundImage = `url('${url}')`;
+        };
+        img.onerror = () => {
+            // em caso de erro mantém apenas a cor de fundo definida pela classe
+            document.body.style.backgroundImage = '';
+        };
     }
 
     function convertvalues() {

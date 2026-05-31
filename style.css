@@ -117,3 +117,56 @@ section {
     font-weight: 700;
     color: #555555;
 }
+
+/* Responsividade */
+@media (max-width: 900px) {
+    main {
+        width: 70%;
+        padding: 32px 18px;
+    }
+
+    .logo {
+        width: 220px;
+    }
+}
+
+@media (max-width: 520px) {
+    main {
+        width: 92%;
+        padding: 20px 12px;
+        border-radius: 14px;
+    }
+
+    .logo {
+        width: 160px;
+        margin: 12px auto;
+    }
+
+    label {
+        font-size: 13px;
+    }
+
+    button {
+        font-size: 16px;
+        height: 44px;
+    }
+
+    section {
+        padding: 10px;
+    }
+
+    .currency-box {
+        gap: 2px;
+    }
+
+    .currency-value, .currency-value-to-convert {
+        font-size: 16px;
+    }
+}
+
+/* Garantir que imagens se ajustem */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
